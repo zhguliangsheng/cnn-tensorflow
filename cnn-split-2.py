@@ -12,7 +12,7 @@ df_x_tumour=pd.read_csv('tumour_3.csv',header=None)
 #删除值全为零的行
 df_x_tumour_1=df_x_tumour #借用一个中间变量
 for i in range(0,df_x_tumour.iloc[:,0].size):
-    list_row=list(set(list(df_x_tumour.iloc[i])))#每一行不重复的数字如果只有0，则改行全为0
+    list_row=list(set(list(df_x_tumour.iloc[i])))#每一行不重复的数字如果只有0，则该行全为0
     if(list_row==[0.0]):
         df_x_tumour_1=df_x_tumour_1.drop(i)
 df_x_tumour=df_x_tumour_1
@@ -23,7 +23,7 @@ df_x_NC=pd.read_csv('NC_3.csv',header=None)
 #删除值全为零的行
 df_x_NC_1=df_x_NC
 for i in range(0,df_x_NC.iloc[:,0].size):
-    list_row=list(set(list(df_x_NC.iloc[i]))) #每一行不重复的数字如果只有0，则改行全为0
+    list_row=list(set(list(df_x_NC.iloc[i]))) #每一行不重复的数字如果只有0，则该行全为0
     if(list_row==[0.0]):
         df_x_NC_1=df_x_NC_1.drop(i)    
 df_x_NC=df_x_NC_1
